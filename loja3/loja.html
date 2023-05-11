@@ -1,0 +1,97 @@
+<?php
+//iniciar log//
+session_start();
+if(isset($_SESSION["usuario_logado"])){
+    header("location: loja.php");
+}
+if(isset($_GET["sair"])){
+    unset($_SESSION["usuario_logado"]);
+    header("location: login.php");
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- header da pag-->
+    <header class="container">
+        <section class="row">
+            <img src="./assets/imagens/ea.jpeg" alt="" class="logo" width="120px">
+            <div class="divBusca">
+                <input type="text" id="txtBusca" placeholder="Buscar..."/>
+
+            </div>
+            <!--Menu da pag-->    
+                <nav class="itens">
+                    <ul>
+                        <li >
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Sobre</a>
+                        </li>
+                        <li>
+                            <a href="./DAO/produtos.html">Cadastrar Produto</a>
+                        </li>
+                        <li>
+                            <a href="login.html" class="btn btn-color">LOGIN</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+        </section>
+    </header> 
+    
+
+    <!--lista produtos-->
+<fieldset>
+    
+    <ul style="list-style: none;" class="produtos-menu">
+        <li><a href="https://www.google.com.br/search?q=livros+infantil&hl=pt-BR&gl=br&biw=1600&bih=757&tbm=bks&sxsrf=ALiCzsbOTDEBaA4tu7nBuOhaJQGWjueW5Q%3A1669375037211&ei=PaSAY5bGDIus5OUPmZOIuAw&oq=livros+in&gs_lcp=Cg1nd3Mtd2l6LWJvb2tzEAMYADIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABFC_EliLIGC7J2gBcAB4AYAB1gGIAbIIkgEFOC4xLjGYAQCgAQHAAQE&sclient=gws-wiz-books">Livros infantil</a> </li>
+        <br>
+        <li><a href="https://www.google.com.br/search?q=livros+romance&hl=pt-BR&gl=br&biw=1600&bih=757&tbm=bks&sxsrf=ALiCzsb1snMsi2XCYktsoTY44Zx1N6lsmQ%3A1669375046365&ei=RqSAY87yFZzb5OUPmNWj2As&ved=0ahUKEwjOrYrVmsn7AhWcLbkGHZjqCLsQ4dUDCAk&uact=5&oq=livros+romance&gs_lcp=Cg1nd3Mtd2l6LWJvb2tzEAMyBQgAEIAEUPsFWNgMYMENaABwAHgAgAGVAYgB9AWSAQMzLjSYAQCgAQHAAQE&sclient=gws-wiz-books"> Livros romance</a></li>
+        <br>
+        <li><a href="https://www.google.com.br/search?q=livros+magia&hl=pt-BR&gl=br&biw=1600&bih=757&tbm=bks&sxsrf=ALiCzsa42XO5eqlA5FS4p4UOkYDpkQKBng%3A1669375086863&ei=bqSAY8yqNJ6m5OUP06ir0AU&ved=0ahUKEwjMmbLomsn7AhUeE7kGHVPUCloQ4dUDCAk&uact=5&oq=livros+magia&gs_lcp=Cg1nd3Mtd2l6LWJvb2tzEAM6BQgAEIAEUMAFWO4KYO4LaABwAHgAgAG9AYgBvQWSAQMyLjSYAQCgAQHAAQE&sclient=gws-wiz-books">Livros magia</a> </li>
+        <br>
+        <li><a href="https://www.google.com.br/search?q=livros+receitas&hl=pt-BR&gl=br&biw=1600&bih=757&tbm=bks&sxsrf=ALiCzsYL5rbaibb1Q0C-QldRPrPzeaINzg%3A1669375124170&ei=lKSAY4eFCo-K5OUPzvqB8Ac&ved=0ahUKEwiHn5f6msn7AhUPBbkGHU59AH4Q4dUDCAk&uact=5&oq=livros+receitas&gs_lcp=Cg1nd3Mtd2l6LWJvb2tzEANQeVh5YM0GaABwAHgAgAF8iAHaAZIBAzEuMZgBAKABAcABAQ&sclient=gws-wiz-books">Livros receitas</a> </li>
+        
+
+    </ul>
+    <H1 class="produtos">LIVROS DO MES</H1>
+    <br><br><br>
+</fieldset>
+ 
+<!--//prod-->
+    <div class="produtos">
+    <div><img  src="./assets/imagens/infantil/lobomau.jpg" alt=""><a href="https://books.google.com.br/books?id=mDcXSgAACAAJ&hl=pt-BR&num=10&redir_esc=y"> Emprestar </a></div>
+    <div><img src="./assets/imagens/infantil/meninoM.jpg" alt=""> <a href="https://www.google.com.br/books/edition/O_Menino_Maluquinho/M2PKAgAAQBAJ?hl=pt-BR&gbpv=1&dq=o+menino+maluquinho&printsec=frontcover"> Emprestar </a> </div>
+    <div><img src="./assets/imagens/magia/animaisf.jpg" alt=""><a href=""> Emprestar </a></div>
+    <div><img src="./assets/imagens/magia/harry1.jpg" alt=""><a href=""> Emprestar </a></div>
+    <div><img src="./assets/imagens/magia/harry2.jpg" alt=""><a href=""> Emprestar </a></div>
+    </div>
+    <br><br><br><br>
+    <div class="produtos">
+        <div><img  src="./assets/imagens/magia/harry3.jpg" alt=""><a href=""> Emprestar </a></div>
+        <div><img src="./assets/imagens/magia/harry4.jpg" alt=""> <a href=""> Emprestar </a> </div>
+        <div><img src="./assets/imagens/romance/apesar.jpg" alt=""><a href=""> Emprestar </a></div>
+        <div><img src="./assets/imagens/romance/comoeuera.jpg" alt=""><a href=""> Emprestar </a></div>
+        <div><img src="./assets/imagens/romance/portoseguro.jpg" alt=""><a href=""> Emprestar </a></div>
+        </div>
+    
+
+    <!-- fim conteuro site-->
+    <br>
+<footer class="footer1">
+    <div></div>
+    <img class="footer2" src="https://149448397.v2.pressablecdn.com/wp-content/uploads/2019/12/footer-3.png" alt="">
+</footer>
+
+</body>
+</html>

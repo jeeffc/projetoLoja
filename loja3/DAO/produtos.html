@@ -1,0 +1,42 @@
+<?php
+session_start();
+require_once("serverproduto.php");
+if(!empty($_SESSION['mensagem'])){
+    echo $_SESSION['mensagem'];
+    unset($_SESSION['mensagem']);
+}
+?>
+
+<style>
+    body{
+        background: linear-gradient(#a222, #456);
+        align-items: center;
+        padding: 10% 40%;
+        border-radius: 15px;
+        
+    }
+    fieldset{
+        border-radius: 15px;
+        height: 300px;
+
+    }
+    .enviar{ 
+        margin-left: 40%;
+
+    }
+    .cod{
+        margin-left: 12%;
+    }
+</style>
+<fieldset>
+<form action="listar.php" method="get" accept-charset="utf-8">
+Nome do livro<input type="text" name="nomeproduto" required><br>
+<br>
+Auto do livro  <input type="text" name="autor" required><br>
+<br>
+Codigo  <input class="cod" type="number" name="codigo" required ><br>
+<br>
+    <input class="enviar" type="submit" name="enviar" >
+
+</fieldset>
+</form>
